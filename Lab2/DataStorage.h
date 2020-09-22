@@ -11,19 +11,24 @@ class data_storage
 private:
 	list<T> data;
 
-	typename list<T>::iterator binary_search()
+	typename list<T>::iterator binary_search(const T& value)
 	{
-
+		return find(data.begin(), data.end(), value);
 	}
 
-	typename list<T>::iterator linear_search()
+	typename list<T>::iterator linear_search(const T& value)
 	{
-
+		return find(data.begin(), data.end(), value);
 	}
 
 public:
 	data_storage() : data() {}
-
+	~data_storage()
+	{
+		
+	}
+	typename list<T>::iterator get_begin() { return data.begin(); }
+	typename list<T>::iterator get_end() { return data.end(); }
 	void Add(T value) { data.push_back(value); }
 	void Delete(typename list<T>::iterator element) { data.erase(element); }
 	void Change(typename list<T>::iterator element) { cin >> *element; }
@@ -31,12 +36,12 @@ public:
 	{
 		data.sort();
 	}
-	typename list<T>::iterator search(string type = "lin")
+	typename list<T>::iterator search(const T& value, string type = "lin")
 	{
 		if (type == "lin")
-			return linear_search();
+			return linear_search(value);
 		else if (type == "bin")
-			return binary_search();
+			return binary_search(value);
 	}
 
 

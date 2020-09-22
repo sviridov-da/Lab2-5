@@ -7,11 +7,13 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "search_prop.h"
 using namespace std;
 
 class computer_model
 {
-private:
+
+public:
 	int code;
 	string brand_name;
 	string processor_type;
@@ -21,7 +23,6 @@ private:
 	float computer_cost;
 	unsigned short int count_of_computers;
 
-public:
 	computer_model(int code, string brand_name, string processor_type,
 					unsigned short int ram_size, unsigned short int hard_disk_space,
 					unsigned short int video_card_memory, float computer_cost, 
@@ -33,6 +34,8 @@ public:
 	computer_model() :code(0), brand_name(""), processor_type(""),
 					ram_size(0), hard_disk_space(0), video_card_memory(0),
 					computer_cost(0), count_of_computers(0) {}
+
+	
 
 	void print_to_console(ostream& current_stream)
 	{
@@ -162,5 +165,7 @@ public:
 	{
 		return !(comp1 >= comp2);
 	}
+
+	
 };
 

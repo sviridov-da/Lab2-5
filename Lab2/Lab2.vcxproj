@@ -150,10 +150,12 @@
     <ClCompile Include="computer_model.cpp" />
     <ClCompile Include="DataStorage.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="search_prop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="computer_model.h" />
     <ClInclude Include="DataStorage.h" />
+    <ClInclude Include="search_prop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
