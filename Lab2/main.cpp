@@ -79,7 +79,14 @@ void search_element(data_storage<computer_model>& storage)
     cin >> properties;
     computer_model computer(0, "", properties.processor_type, properties.ram_size,
         properties.hard_disk_space, properties.video_card_memory, 0, 0);
-    list<computer_model>::iterator current = storage.search(computer);
+    cout << "Choose search type:\n1 - linear\n2 - binary";
+    char search_type;
+    cin >> search_type;
+    list<computer_model>::iterator current;
+    if(search_type == '1')
+        current = storage.search(computer, "lin");
+    else
+        current = storage.search(computer, "bin");
     if (current != storage.get_end())
         work_with_element(storage, current);
     else
@@ -189,7 +196,7 @@ int main_menu(data_storage<computer_model> &storage)
     cout << "1 - print data\n";
     cout << "2 - save data to file\n";
     cout << "3 - add element from keyboard\n";
-    cout << "4 - add elements from file\n";
+    cout << "4 - add elements from file (example file \"test.txt\")\n";
     cout << "5 - search element\n";
     cout << "6 - get subset\n";
     cout << "0 - exit\n";

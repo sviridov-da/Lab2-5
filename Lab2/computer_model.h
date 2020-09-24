@@ -149,6 +149,7 @@ public:
 			if (comp1.hard_disk_space != comp2.hard_disk_space)
 				return comp1.hard_disk_space > comp2.hard_disk_space;
 		}
+		return false;
 	}
 
 	friend bool operator>=(const computer_model& comp1, const computer_model& comp2)

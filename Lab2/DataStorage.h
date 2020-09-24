@@ -13,7 +13,10 @@ private:
 
 	typename list<T>::iterator binary_search(const T& value)
 	{
-		return find(data.begin(), data.end(), value);
+		typename list<T>::iterator result = lower_bound(data.begin(), data.end(), value, [](const T& el1, const T& el2) {return el1 <= el2;  });
+		if (*result == value)
+			return result;
+		return data.end();
 	}
 
 	typename list<T>::iterator linear_search(const T& value)
@@ -40,7 +43,7 @@ public:
 	{
 		if (type == "lin")
 			return linear_search(value);
-		else if (type == "bin")
+		else
 			return binary_search(value);
 	}
 
